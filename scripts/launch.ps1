@@ -11,6 +11,18 @@ $projectDirectory = Split-Path -Parent $PSScriptRoot
 $uvVersion = '0.11.14'
 $uvArchiveHash = '52ba5d19409aaa688a8a1a6ec8dfb6a4817230d20186e75f4006105c3e39a846'
 
+function Get-ArchiveDigest([string] $archivePath) {
+    # Do not rely on optional PowerShell utility/archive modules.
+    $stream = [IO.File]::OpenRead($archivePath)
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    try {
+        return [BitConverter]::ToString($algorithm.ComputeHash($stream)).Replace('-', '').ToLowerInvariant()
+    } finally {
+        $stream.Dispose()
+        $algorithm.Dispose()
+    }
+}
+
 function Find-ProjectUv {
     # Use only the tested uv version. A different installed version is left alone.
     $installed = Get-Command uv -CommandType Application -ErrorAction SilentlyContinue
@@ -26,14 +38,30 @@ function Find-ProjectUv {
     New-Item -ItemType Directory -Path $toolDirectory -Force | Out-Null
     $archive = Join-Path $toolDirectory 'uv.zip'
     $url = "https://github.com/astral-sh/uv/releases/download/$uvVersion/uv-x86_64-pc-windows-msvc.zip"
-    Write-Host "Downloading verified uv $uvVersion into .tools ..."
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $ProgressPreference = 'SilentlyContinue'
-    Invoke-WebRequest -Uri $url -OutFile $archive -UseBasicParsing
-    if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $uvArchiveHash) {
+    if (!(Test-Path -LiteralPath $archive) -or (Get-ArchiveDigest $archive) -ne $uvArchiveHash) {
+        Write-Host "Downloading verified uv $uvVersion into .tools (first setup may take several minutes) ..."
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        $ProgressPreference = 'SilentlyContinue'
+        Invoke-WebRequest -Uri $url -OutFile $archive -UseBasicParsing -TimeoutSec 600
+    }
+    if ((Get-ArchiveDigest $archive) -ne $uvArchiveHash) {
         throw 'uv download checksum mismatch; the archive has not been executed.'
     }
-    Expand-Archive -LiteralPath $archive -DestinationPath $toolDirectory -Force
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $zip = [IO.Compression.ZipFile]::OpenRead($archive)
+    try {
+        foreach ($entry in $zip.Entries) {
+            $targetPath = [IO.Path]::GetFullPath((Join-Path $toolDirectory $entry.FullName))
+            if (!$targetPath.StartsWith($toolDirectory + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+                throw 'Archive entry leaves the project tool directory.'
+            }
+            if ($entry.Name -eq '') { [IO.Directory]::CreateDirectory($targetPath) | Out-Null }
+            else {
+                [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($targetPath)) | Out-Null
+                [IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $targetPath, $true)
+            }
+        }
+    } finally { $zip.Dispose() }
     if (!(Test-Path -LiteralPath $localUv)) { throw 'Verified uv archive did not contain uv.exe.' }
     return $localUv
 }
