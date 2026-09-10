@@ -1,0 +1,27 @@
+.venv/
+.tools/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+cache/
+runs/
+benchmarks/
+deliverables/
+reports/
+build/
+dist/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+docs/history/
+docs/ai/
+CLAUDE.md
+# Original project notes link to local, immutable evidence archives.
+# Portable documentation for the repository is in docs/github/.
+docs/*.md
+# Bundle only the actual inputs, not attached task prompts or old contracts.
+source_bundle/*/*
+!source_bundle/smartcar-agent-foundation-v1/data/

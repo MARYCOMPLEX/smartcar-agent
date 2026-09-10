@@ -1,0 +1,78 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "power_switch_xa007",
+  "display_name": "XA007 power switch assembly",
+  "role": "power_switch",
+  "kit_quantity": 1,
+  "authoritative_status": "official_exact_cad_plus_derived_functional_feature",
+  "rigid_body": {
+    "envelope_xyz_mm": [
+      19.763,
+      32.0,
+      20.5
+    ],
+    "official_local_bounds_xyz_mm": [
+      [
+        -7.25,
+        -4.6000001,
+        -16.0
+      ],
+      [
+        13.25,
+        15.1627419,
+        16.0
+      ]
+    ]
+  },
+  "mounting_features": {
+    "hole_diameter_mm": 2.7
+  },
+  "functional_features": [
+    {
+      "id": "actuator",
+      "type": "human_control",
+      "local_bounds_xyz_mm": [
+        [
+          -7.115,
+          -4.6000001,
+          -3.335
+        ],
+        [
+          5.585,
+          15.1627419,
+          3.365
+        ]
+      ],
+      "motion_axis": "+X",
+      "external_access_required": true,
+      "source_status": "derived"
+    }
+  ],
+  "service_constraints": {
+    "lead_free_length_mm": {
+      "value": 80.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        40.0,
+        120.0
+      ]
+    }
+  },
+  "notes": [
+    "Opening geometry must be derived from the final switch pose and actuator access volume; no historical opening coordinates are retained."
+  ],
+  "source": {
+    "hardware_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+    "production_runtime": "hardware-kit/production-snapshot/hardware-profile-runtime.v1.json",
+    "supplied_archive_path": "hardware-kit/repo-pr311/references/official_interfaces/XA007_power_switch.step",
+    "source_sha256": "d0a9a84b3cbb9a46eed2cd9e23334b54182b445419c5c5838b2dccc60977177d"
+  },
+  "geometry": {
+    "authority": "official_exact_cad",
+    "path": "exact/power_switch.step",
+    "format": "step",
+    "sha256": "d0a9a84b3cbb9a46eed2cd9e23334b54182b445419c5c5838b2dccc60977177d",
+    "preserve_bytes": true
+  }
+}

@@ -1,0 +1,43 @@
+name: Windows clone and run
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install from the committed lock and verify native geometry
+        shell: cmd
+        run: setup.cmd
+      - name: Geometry regression suite
+        shell: cmd
+        run: test.cmd -q --junitxml=reports/tests.xml
+      - name: Analyze bundled appearance and import authoritative hardware
+        shell: cmd
+        run: run.cmd --stage analyze --run-id ci-smoke
+      - name: Require completed analysis
+        shell: pwsh
+        run: |
+          $status = Get-Content runs/ci-smoke/run_status.json | ConvertFrom-Json
+          if ($status.status -ne 'ANALYSIS_COMPLETE') { throw 'Analysis did not complete' }
+          if (!(Test-Path runs/ci-smoke/01_input/hardware_definitions.json)) { throw 'Hardware was not imported' }
+      - name: Preserve verification records
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-verification
+          retention-days: 7
+          path: |
+            reports/install_check.json
+            reports/tests.xml
+            runs/ci-smoke/run_status.json
+            runs/ci-smoke/execution.log
+            runs/ci-smoke/exception.txt

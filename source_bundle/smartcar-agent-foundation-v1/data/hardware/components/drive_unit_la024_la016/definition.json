@@ -1,0 +1,61 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "drive_unit_la024_la016",
+  "display_name": "LA024-030 + LA016-1:48 completed drive unit",
+  "role": "drive_unit",
+  "kit_quantity": 2,
+  "authoritative_status": "mixed_official_and_measured",
+  "rigid_body": {
+    "envelope_xyz_mm": [
+      54.35,
+      18.0,
+      22.0
+    ]
+  },
+  "mechanical_interfaces": [
+    {
+      "id": "output_shaft_double_d",
+      "type": "rotary_output",
+      "axis_offsets_mm": {
+        "from_end": 11.0,
+        "from_bottom": 11.0
+      },
+      "profile_xy_mm": [
+        5.3,
+        5.23993
+      ],
+      "engagement_mm": 4.7,
+      "center_bore_diameter_mm": 2.0,
+      "mating_clearance_per_side_mm": 0.1,
+      "mating_clearance_status": "physical_confirmed"
+    }
+  ],
+  "service_constraints": {
+    "motor_lead_free_length_mm": {
+      "value": 90.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        80.0,
+        180.0
+      ]
+    }
+  },
+  "notes": [
+    "Standalone LA024 motor CAD is not authoritative in the supplied data. Treat the completed LA024+LA016 reference as the packaging truth.",
+    "Do not reuse any previous vehicle placement coordinates."
+  ],
+  "source": {
+    "hardware_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+    "production_runtime": "hardware-kit/production-snapshot/hardware-profile-runtime.v1.json",
+    "supplied_archive_path": "hardware-kit/repo-pr311/references/official_interfaces/LA016_complete_reducer_reference.stp",
+    "source_sha256": "4cf383cfa71ea844a761c7caa4764fb1087fa61ca0c42718fba1bc0b70962863"
+  },
+  "geometry": {
+    "authority": "official_exact_cad",
+    "path": "exact/drive_unit_reference.stp",
+    "format": "stp",
+    "sha256": "4cf383cfa71ea844a761c7caa4764fb1087fa61ca0c42718fba1bc0b70962863",
+    "preserve_bytes": true
+  }
+}

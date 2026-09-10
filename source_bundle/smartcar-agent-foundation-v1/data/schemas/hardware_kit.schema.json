@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HardwareKit",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kit_id",
+    "components"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "hardware-kit.v1"
+    },
+    "kit_id": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array"
+    },
+    "subassemblies": {
+      "type": "array"
+    },
+    "known_gaps": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

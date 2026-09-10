@@ -1,0 +1,45 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "controller_xa003_xa004",
+  "display_name": "XA003+XA004 receiver/controller assembly",
+  "role": "main_controller",
+  "kit_quantity": 1,
+  "authoritative_status": "official_exact_cad",
+  "rigid_body": {
+    "board_xy_mm": [
+      30.0,
+      29.0
+    ],
+    "total_height_mm": 22.579,
+    "pcb_thickness_mm": 1.7
+  },
+  "mounting_features": {
+    "hole_pitch_xy_mm": [
+      24.0,
+      23.0
+    ],
+    "hole_diameter_mm": 2.7,
+    "support_plane_to_rigid_min_mm": 11.7492
+  },
+  "functional_features": [],
+  "needs_annotation": [
+    "connector frames / cable exit directions",
+    "any charging/data port that must be externally accessible"
+  ],
+  "notes": [
+    "Do not infer a charging port from concept requirements unless it is explicitly annotated from hardware truth."
+  ],
+  "source": {
+    "hardware_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+    "production_runtime": "hardware-kit/production-snapshot/hardware-profile-runtime.v1.json",
+    "supplied_archive_path": "hardware-kit/repo-pr311/references/official_interfaces/XA003_XA004_receiver.stp",
+    "source_sha256": "0aa331d8648f38cf3eb203c2a4dd7621e25985feb8a757cd1c4565269365e921"
+  },
+  "geometry": {
+    "authority": "official_exact_cad",
+    "path": "exact/controller_receiver.stp",
+    "format": "stp",
+    "sha256": "0aa331d8648f38cf3eb203c2a4dd7621e25985feb8a757cd1c4565269365e921",
+    "preserve_bytes": true
+  }
+}

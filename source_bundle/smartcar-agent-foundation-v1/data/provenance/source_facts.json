@@ -1,0 +1,273 @@
+{
+  "schema_version": "source-facts.v1",
+  "source_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+  "source_profile_sha256": "5b480bac41370fc193033395a6e4dd2e7e738f2af32d5e023b43aa579df4b785",
+  "facts": {
+    "hardware.la016.completed_body_xyz": {
+      "value": [
+        54.35,
+        18.0,
+        22.0
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.completed_body_xyz"
+    },
+    "hardware.la016.output_axis_from_end": {
+      "value": 11.0,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.output_axis_from_end"
+    },
+    "hardware.la016.output_axis_from_bottom": {
+      "value": 11.0,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.output_axis_from_bottom"
+    },
+    "hardware.la016.output_key_xy": {
+      "value": [
+        5.3,
+        5.23993
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.output_key_xy"
+    },
+    "hardware.la016.output_key_engagement": {
+      "value": 4.7,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.output_key_engagement"
+    },
+    "hardware.la016.output_key_center_bore_diameter": {
+      "value": 2.0,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.la016.output_key_center_bore_diameter"
+    },
+    "fit.la016_output_key_clearance_per_side": {
+      "value": 0.1,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "source_json_path": "$.parameters.fit.la016_output_key_clearance_per_side"
+    },
+    "hardware.cable.motor_lead_free_length": {
+      "value": 90.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        80.0,
+        180.0
+      ],
+      "source_json_path": "$.parameters.hardware.cable.motor_lead_free_length"
+    },
+    "hardware.receiver.board_xy": {
+      "value": [
+        30.0,
+        29.0
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.board_xy"
+    },
+    "hardware.receiver.total_height": {
+      "value": 22.579,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.total_height"
+    },
+    "hardware.receiver.hole_pitch_xy": {
+      "value": [
+        24.0,
+        23.0
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.hole_pitch_xy"
+    },
+    "hardware.receiver.hole_diameter": {
+      "value": 2.7,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.hole_diameter"
+    },
+    "hardware.receiver.pcb_thickness": {
+      "value": 1.7,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.pcb_thickness"
+    },
+    "hardware.receiver.support_plane_to_rigid_min": {
+      "value": 11.7492,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.receiver.support_plane_to_rigid_min"
+    },
+    "hardware.battery.rigid_body_xyz": {
+      "value": [
+        51.2,
+        28.4,
+        16.3
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.battery.rigid_body_xyz"
+    },
+    "hardware.cable.battery_lead_free_length": {
+      "value": 80.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        60.0,
+        120.0
+      ],
+      "source_json_path": "$.parameters.hardware.cable.battery_lead_free_length"
+    },
+    "hardware.switch.rigid_body_xyz": {
+      "value": [
+        19.763,
+        32.0,
+        20.5
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.switch.rigid_body_xyz"
+    },
+    "hardware.switch.official_local_bounds_xyz": {
+      "value": [
+        [
+          -7.25,
+          -4.6000001,
+          -16.0
+        ],
+        [
+          13.25,
+          15.1627419,
+          16.0
+        ]
+      ],
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.switch.official_local_bounds_xyz"
+    },
+    "hardware.switch.actuator_local_bounds_xyz": {
+      "value": [
+        [
+          -7.115,
+          -4.6000001,
+          -3.335
+        ],
+        [
+          5.585,
+          15.1627419,
+          3.365
+        ]
+      ],
+      "unit": "mm",
+      "status": "derived",
+      "source_json_path": "$.parameters.hardware.switch.actuator_local_bounds_xyz"
+    },
+    "hardware.switch.actuator_motion_axis": {
+      "value": "+X",
+      "unit": "local_axis",
+      "status": "derived",
+      "source_json_path": "$.parameters.hardware.switch.actuator_motion_axis"
+    },
+    "hardware.switch.hole_diameter": {
+      "value": 2.7,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.switch.hole_diameter"
+    },
+    "hardware.cable.power_switch_lead_free_length": {
+      "value": 80.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        40.0,
+        120.0
+      ],
+      "source_json_path": "$.parameters.hardware.cable.power_switch_lead_free_length"
+    },
+    "hardware.screw.thread_diameter": {
+      "value": 2.5,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.screw.thread_diameter"
+    },
+    "hardware.screw.thread_length": {
+      "value": 6.0,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.screw.thread_length"
+    },
+    "hardware.screw.head_diameter": {
+      "value": 4.7,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.screw.head_diameter"
+    },
+    "hardware.screw.head_height": {
+      "value": 1.5,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.hardware.screw.head_height"
+    },
+    "fit.m25_vertical_self_tap_pilot": {
+      "value": 2.7,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        2.6,
+        2.85
+      ],
+      "candidate_values": [
+        2.6,
+        2.65,
+        2.7,
+        2.75,
+        2.8,
+        2.85
+      ],
+      "source_json_path": "$.parameters.fit.m25_vertical_self_tap_pilot"
+    },
+    "fit.m25_horizontal_self_tap_pilot": {
+      "value": 2.4,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        2.4,
+        2.9
+      ],
+      "candidate_values": [
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8,
+        2.9
+      ],
+      "source_json_path": "$.parameters.fit.m25_horizontal_self_tap_pilot"
+    },
+    "fit.m25_running_clearance_hole": {
+      "value": 2.85,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "source_json_path": "$.parameters.fit.m25_running_clearance_hole"
+    },
+    "fit.m25_forklift_front_wheel_running_bore": {
+      "value": 2.9,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.fit.m25_forklift_front_wheel_running_bore"
+    },
+    "fit.m25_forklift_front_wheel_load_web": {
+      "value": 1.1,
+      "unit": "mm",
+      "status": "official_locked",
+      "source_json_path": "$.parameters.fit.m25_forklift_front_wheel_load_web"
+    }
+  },
+  "policy": "hardware-intrinsic values only; historical design evidence narratives intentionally removed"
+}

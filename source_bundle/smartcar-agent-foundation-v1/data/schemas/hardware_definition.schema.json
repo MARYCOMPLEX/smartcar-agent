@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HardwareDefinition",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "role",
+    "kit_quantity",
+    "authoritative_status",
+    "geometry",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "hardware-definition.v1"
+    },
+    "id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "kit_quantity": {},
+    "authoritative_status": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object"
+    },
+    "rigid_body": {
+      "type": "object"
+    },
+    "mechanical_interfaces": {
+      "type": "array"
+    },
+    "mounting_features": {
+      "type": "object"
+    },
+    "functional_features": {
+      "type": "array"
+    },
+    "service_constraints": {
+      "type": "object"
+    },
+    "source": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

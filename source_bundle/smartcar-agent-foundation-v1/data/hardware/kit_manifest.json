@@ -1,0 +1,75 @@
+{
+  "schema_version": "hardware-kit.v1",
+  "kit_id": "smartcar_basic_zk004_clean_v1",
+  "display_name": "智能小车基础硬件输入包（清洗版）",
+  "unit": "mm",
+  "purpose": "Generic layout/structure-synthesis agent input. Contains no previous vehicle placement, chassis, shell, or workflow rules.",
+  "components": [
+    {
+      "id": "drive_unit_la024_la016",
+      "path": "components/drive_unit_la024_la016/definition.json",
+      "quantity": 2
+    },
+    {
+      "id": "controller_xa003_xa004",
+      "path": "components/controller_xa003_xa004/definition.json",
+      "quantity": 1
+    },
+    {
+      "id": "battery_pc003",
+      "path": "components/battery_pc003/definition.json",
+      "quantity": 1
+    },
+    {
+      "id": "power_switch_xa007",
+      "path": "components/power_switch_xa007/definition.json",
+      "quantity": 1
+    },
+    {
+      "id": "fastener_aa050",
+      "path": "components/fastener_aa050/definition.json",
+      "quantity": "as_required_with_physical_count_gate"
+    },
+    {
+      "id": "drive_wheel_37mm",
+      "path": "components/drive_wheel_37mm/definition.json",
+      "quantity": 2
+    },
+    {
+      "id": "front_idler_wheel_37mm",
+      "path": "components/front_idler_wheel_37mm/definition.json",
+      "quantity": 2
+    }
+  ],
+  "subassemblies": [
+    {
+      "id": "rear_drive_module",
+      "quantity": 2,
+      "members": [
+        "drive_unit_la024_la016",
+        "drive_wheel_37mm"
+      ],
+      "relationship": "fixed mechanical mating through double-D output interface; solver places the assembled module or enforces the interface as a hard constraint"
+    }
+  ],
+  "global_requirements": [
+    "all hardware poses are solved from the current appearance geometry; no historical pose may be used",
+    "external-access features are generated from hardware feature frames after pose selection",
+    "every embedded component requires a collision-free assembly/removal path unless explicitly non-serviceable"
+  ],
+  "known_gaps": [
+    "No independent authoritative charging-port definition is supplied. Do not invent one.",
+    "No authoritative standalone LA024 motor CAD is supplied; completed LA024+LA016 reference is used for packaging.",
+    "No authoritative drive/passive wheel CAD is supplied; only a 37 mm × 13 mm collision proxy generated from supplied dimensions is included.",
+    "Component masses and centers of mass are not supplied.",
+    "Controller connector semantic frames are not supplied and need annotation before port-access optimization."
+  ],
+  "source": {
+    "repository": {
+      "remote_origin": "https://github.com/MARYCOMPLEX/LINGO-AI.git",
+      "source_commit": "47f0b27ffeee8aed793424509b968f23295a5c4a",
+      "source_release": "v0.0.44"
+    },
+    "published_hardware_binding": "cyberbrick-zk004-manual release 1.0.4 as stated in supplied provenance"
+  }
+}

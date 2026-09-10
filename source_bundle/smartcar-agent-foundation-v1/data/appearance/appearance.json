@@ -1,0 +1,43 @@
+{
+  "schema_version": "appearance-asset.v1",
+  "asset_id": "vehicle_appearance_sample_001",
+  "role": "appearance_only",
+  "geometry": {
+    "path": "vehicle_appearance.stl",
+    "format": "stl",
+    "unit": "mm",
+    "sha256": "bd877ac21d6a9563c095a9787f75894330bd498f398a27c1751698e8ff3157b8"
+  },
+  "mesh_stats_from_source": {
+    "extents_mm": [
+      138.734428,
+      62.418495,
+      50.584095
+    ],
+    "vertex_count": 13345,
+    "triangle_count": 27090,
+    "connected_component_count_before_runner_processing": 36,
+    "is_watertight_before_runner_processing": false,
+    "is_volume_before_runner_processing": false
+  },
+  "interpretation": {
+    "use_as": "external appearance/reference geometry; not a pre-existing chassis or cavity",
+    "do_not_assume": [
+      "watertight",
+      "single connected component",
+      "predefined front/up axes",
+      "existing usable interior cavity"
+    ]
+  },
+  "source": {
+    "supplied_archive_path": "input-model/online-input.stl",
+    "source_archive_digest": "sha256:bd877ac21d6a9563c095a9787f75894330bd498f398a27c1751698e8ff3157b8",
+    "repository_cross_check": {
+      "repository": "https://github.com/MARYCOMPLEX/LINGO-AI.git",
+      "commit": "47f0b27ffeee8aed793424509b968f23295a5c4a",
+      "release": "v0.0.44",
+      "path": "frontend/public/case-assets/zk004-one-piece-pickup/prototype/model.stl",
+      "bytes_match": true
+    }
+  }
+}

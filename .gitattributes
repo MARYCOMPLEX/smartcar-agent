@@ -1,0 +1,15 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
+*.yml text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.stl binary
+*.step binary
+*.stp binary
+*.png binary
+# Preserve original input bytes, including JSON provenance and checksums.
+source_bundle/** -text whitespace=cr-at-eol

@@ -1,0 +1,71 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "fastener_aa050",
+  "display_name": "AA050 M2.5x6 button-head screw",
+  "role": "fastener_reference",
+  "kit_quantity": "as_required_with_physical_count_gate",
+  "authoritative_status": "official_exact_cad",
+  "fastener": {
+    "thread_diameter_mm": 2.5,
+    "thread_length_mm": 6.0,
+    "head_diameter_mm": 4.7,
+    "head_height_mm": 1.5
+  },
+  "manufacturing_calibration": {
+    "vertical_self_tap_pilot_mm": {
+      "value": 2.7,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        2.6,
+        2.85
+      ],
+      "candidate_values": [
+        2.6,
+        2.65,
+        2.7,
+        2.75,
+        2.8,
+        2.85
+      ]
+    },
+    "horizontal_self_tap_pilot_mm": {
+      "value": 2.4,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        2.4,
+        2.9
+      ],
+      "candidate_values": [
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8,
+        2.9
+      ]
+    },
+    "running_clearance_hole_mm": {
+      "value": 2.85,
+      "unit": "mm",
+      "status": "physical_confirmed"
+    }
+  },
+  "notes": [
+    "Pilot-hole values are printer/material-dependent calibration evidence, not universal constants. Keep them in a manufacturing profile in production."
+  ],
+  "source": {
+    "hardware_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+    "production_runtime": "hardware-kit/production-snapshot/hardware-profile-runtime.v1.json",
+    "supplied_archive_path": "hardware-kit/repo-pr311/references/official_interfaces/AA050_M2.5x6_BHCS.step",
+    "source_sha256": "e606bc3c917d0c87f6015fd8ffd03002afb3f6bc2e96d8f1e6841c4faacadf24"
+  },
+  "geometry": {
+    "authority": "official_exact_cad",
+    "path": "exact/m2_5x6_bhcs.step",
+    "format": "step",
+    "sha256": "e606bc3c917d0c87f6015fd8ffd03002afb3f6bc2e96d8f1e6841c4faacadf24",
+    "preserve_bytes": true
+  }
+}

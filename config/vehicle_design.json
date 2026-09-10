@@ -1,0 +1,30 @@
+{
+  "minimum_wheelbase_fraction": 0.42,
+  "preferred_wheelbase_fraction": 0.62,
+  "maximum_wheelbase_fraction": 0.82,
+  "minimum_tire_gap_diameters": 0.35,
+  "source_axle_tolerance_fraction": 0.05,
+  "minimum_source_wheelbase_retention": 0.85,
+  "maximum_overhang_imbalance_fraction": 0.22,
+  "contact_section_height_fractions": [
+    0.04,
+    0.08,
+    0.12,
+    0.16,
+    0.2
+  ],
+  "contact_lateral_fraction": 0.24,
+  "contact_bins": 400,
+  "contact_gap_fraction": 0.012,
+  "minimum_contact_band_fraction": 0.02,
+  "maximum_contact_band_fraction": 0.36,
+  "contact_center_agreement_fraction": 0.035,
+  "minimum_agreeing_sections": 2,
+  "maximum_wheelwell_addition_fraction": 0.12,
+  "wheelwell_radius_margin_fraction": 0.12,
+  "belly_sample_width_fraction": 0.6,
+  "belly_height_quantile": 0.6,
+  "preferred_source_tire_scale": 1.0,
+  "minimum_source_tire_scale": 0.6,
+  "source_tire_scale_is_hard": false
+}

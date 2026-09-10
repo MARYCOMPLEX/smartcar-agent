@@ -1,0 +1,43 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "front_idler_wheel_37mm",
+  "display_name": "front idler wheel 37mm",
+  "role": "passive_wheel",
+  "kit_quantity": 2,
+  "authoritative_status": "hardware_dimensions_known_exact_wheel_cad_missing",
+  "rigid_body": {
+    "nominal_diameter_mm": 37.0,
+    "nominal_width_mm": 13.0,
+    "collision_proxy_extents_xyz_mm": [
+      13.0,
+      37.0,
+      37.0
+    ]
+  },
+  "geometry": {
+    "exact_geometry_available": false,
+    "collision_proxy": {
+      "path": "proxy/wheel_collision_proxy.stl",
+      "format": "stl",
+      "sha256": "f60ba2a5b396a533123fd00e285dbc2fd28d0d87ea9784e1dc985233b0938edd",
+      "authority": "generated_from_supplied_nominal_dimensions",
+      "axis": "+X"
+    },
+    "replacement_rule": "Replace collision proxy with authoritative wheel CAD when available; keep interface facts independently."
+  },
+  "mechanical_interfaces": [
+    {
+      "id": "aa050_running_bore",
+      "type": "rotary_bore",
+      "diameter_mm": 2.9,
+      "load_web_mm": 1.1,
+      "mates_with": "fastener_aa050",
+      "source_status": "official_locked"
+    }
+  ],
+  "warning": "No authoritative wheel STEP exists in the supplied data. This cylinder is only a packaging/collision proxy generated from the supplied 37 mm diameter and 13 mm width; it is not a visual or manufacturing wheel model.",
+  "source": {
+    "nominal_dimensions": "hardware-kit/hardware-inventory.json fixed_parameters_mm.wheel_diameter/wheel_width",
+    "mechanical_interface_facts": "hardware-kit/repo-pr311/hardware-profile.v1.json"
+  }
+}

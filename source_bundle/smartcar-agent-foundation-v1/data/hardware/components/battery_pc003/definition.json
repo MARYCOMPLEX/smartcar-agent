@@ -1,0 +1,44 @@
+{
+  "schema_version": "hardware-definition.v1",
+  "id": "battery_pc003",
+  "display_name": "PC003 battery",
+  "role": "battery",
+  "kit_quantity": 1,
+  "authoritative_status": "official_exact_cad",
+  "rigid_body": {
+    "envelope_xyz_mm": [
+      51.2,
+      28.4,
+      16.3
+    ]
+  },
+  "service_constraints": {
+    "lead_free_length_mm": {
+      "value": 80.0,
+      "unit": "mm",
+      "status": "physical_confirmed",
+      "candidate_range": [
+        60.0,
+        120.0
+      ]
+    },
+    "removal_path_required": true,
+    "do_not_clamp_cable_exit": true
+  },
+  "notes": [
+    "Mass is not supplied; center-of-mass optimization must use unknown/estimated mass only when explicitly enabled."
+  ],
+  "source": {
+    "hardware_profile": "hardware-kit/repo-pr311/hardware-profile.v1.json",
+    "production_runtime": "hardware-kit/production-snapshot/hardware-profile-runtime.v1.json",
+    "supplied_archive_path": "hardware-kit/repo-pr311/references/official_interfaces/PC003_battery.stp",
+    "source_sha256": "11ab308480aa40176330334843c89d5b75bfc6f0cc9235657432ca52fd6ea0c1"
+  },
+  "geometry": {
+    "authority": "official_exact_cad",
+    "path": "exact/battery.stp",
+    "format": "stp",
+    "sha256": "11ab308480aa40176330334843c89d5b75bfc6f0cc9235657432ca52fd6ea0c1",
+    "preserve_bytes": true
+  }
+}
