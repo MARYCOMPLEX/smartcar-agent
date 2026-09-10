@@ -1,0 +1,138 @@
+{
+  "verified_runtime_commit": "6efe94ac72749031060c8f119fbd6f3b0c789905",
+  "repository": "https://github.com/MARYCOMPLEX/smartcar-agent",
+  "date": "2026-09-10",
+  "platform_scope": "Windows x64 / Python 3.12",
+  "fresh_github_clone": {
+    "new_virtual_environment": true,
+    "preexisting_hardware_cache": false,
+    "unchanged_original_input_files": 24,
+    "setup_seconds": 256.9452523,
+    "native_check": "PASS",
+    "python": "3.12.0",
+    "tests": {
+      "tests": "96",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "117.422"
+    }
+  },
+  "bootstrap_without_python_or_uv_on_path": {
+    "python": "3.12.13",
+    "status": "PASS",
+    "setup_retry_seconds": 1117.0835129,
+    "note": "The retry reused and revalidated the already downloaded official uv archive; Python and package caches were initially empty."
+  },
+  "path_and_exit_checks": {
+    "relative_appearance_with_spaces_loaded": true,
+    "invalid_target_length_exit_code": 2,
+    "exact_cad_paths_with_spaces_imported": 5
+  },
+  "github_actions": {
+    "url": "https://github.com/MARYCOMPLEX/smartcar-agent/actions/runs/34476981022",
+    "conclusion": "success",
+    "python": "3.12.13",
+    "tests": {
+      "tests": "96",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "45.297"
+    },
+    "default_analysis_status": "ANALYSIS_COMPLETE"
+  },
+  "default_geometry_probe": {
+    "run_id": "github-clone-full",
+    "run_status": "CANCELLED",
+    "evaluated_candidate": "01-scale-1.900",
+    "candidate_counts": {
+      "PASS": 206,
+      "FAIL": 1,
+      "WARNING": 23
+    },
+    "failed_checks": [
+      {
+        "check": "wall_thickness:body",
+        "status": "FAIL",
+        "required_mm": 1.6,
+        "measurements": {
+          "method": "surface-normal rays: seeded surface samples plus every triangle center in critical junction regions; not a global thickness proof",
+          "samples": 180836,
+          "ray_backend": "trimesh.ray.ray_pyembree",
+          "random_surface_samples": 1200,
+          "critical_feature_samples": 179636,
+          "resolved_samples": 180836,
+          "minimum_mm": 0.1353144728893651,
+          "p01_mm": 2.1000022888183563,
+          "below_minimum": 33,
+          "examples": [
+            [
+              48.38911565144857,
+              99.18641662597656,
+              34.800000508626304
+            ],
+            [
+              -48.04911549886068,
+              99.18641662597656,
+              34.800000508626304
+            ],
+            [
+              56.4335823059082,
+              99.3072026570638,
+              34.800000508626304
+            ],
+            [
+              -55.71965535481771,
+              98.87619018554688,
+              34.49999872843424
+            ],
+            [
+              56.21856562296549,
+              99.39999898274739,
+              35.16741689046224
+            ],
+            [
+              -56.58000055948893,
+              99.28943379720052,
+              34.93258412679037
+            ],
+            [
+              -56.24776967366537,
+              99.13821919759114,
+              34.79476420084635
+            ],
+            [
+              -56.00537999471029,
+              99.1825663248698,
+              34.87618891398112
+            ],
+            [
+              56.3768564860026,
+              99.64314778645833,
+              35.16741689046224
+            ],
+            [
+              56.27685674031576,
+              99.60000101725261,
+              35.134833017985024
+            ],
+            [
+              -56.147769927978516,
+              99.12078857421875,
+              34.85162099202474
+            ],
+            [
+              -55.980000813802086,
+              98.95914204915364,
+              34.632582346598305
+            ]
+          ]
+        }
+      }
+    ],
+    "original_report_sha256": "a7e732f2a75d0bbc10b6d4e32550704f95c4c8fafac13990e112d85f8f60f621",
+    "final_exports_in_this_clone_completed": false,
+    "reason": "The first candidate reproduced the known thin-wall failure for the unchanged bundled source (historical 5.stl). Remaining repeated geometry attempts were intentionally stopped, preserving the original candidate and report. Installation or software checks passing do not constitute printing acceptance."
+  }
+}
