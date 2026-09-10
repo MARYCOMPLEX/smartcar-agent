@@ -15,8 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Install from the committed lock and verify native geometry
-        shell: cmd
-        run: setup.cmd
+        shell: powershell
+        run: |
+          # Exercise bootstrap even if the hosted runner already provides uv/Python.
+          $env:Path = "$env:SystemRoot\System32;$env:SystemRoot\System32\WindowsPowerShell\v1.0"
+          $env:UV_MANAGED_PYTHON = '1'
+          .\setup.cmd
+          exit $LASTEXITCODE
       - name: Geometry regression suite
         shell: cmd
         run: test.cmd -q --junitxml=reports/tests.xml
